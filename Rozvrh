@@ -1,4 +1,4 @@
-
+HTML
 <head>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,3 +87,63 @@
     </table>
 </body>
 </html>
+
+
+CSS
+body{
+    margin: 0px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0px auto;
+    text-align: center;
+    font-family: 'Lucia Sans';
+    font-size: large;
+}
+
+header,
+nav,
+aside,
+.content,
+footer{
+    background-color: rgb(136, 136, 136);
+}
+
+header,
+footer{
+    height: 80px;
+    margin-top: 10px;
+}
+
+nav {
+    height: 60px;
+    margin: 10px 0px;
+}
+
+aside,
+main,
+.content {
+    min-height: 300px;
+}
+
+.content {
+    width: 790px;
+    margin:0px auto;
+}
+
+aside {
+    width: 190px; 
+    overflow: auto;
+}
+
+.left_sec {
+    float: left;
+    margin-right: 10px;
+
+}
+
+.right_sec {
+    float: right;
+    margin-left: 10px;
+}
