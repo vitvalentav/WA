@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Nakodujte grafiku</title>
+  <script src="script.js"></script>
+</head>
+<body>
+    
+
+  <header>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="header-content">
+      <div class="logo">
+        <h2>Logo</h2>
+      </div>
+      <nav>
+        <div class="navigation" id="navigation-btn">Navigace</div>
+        
+        <div class="search-bar">
+            <div class="glass"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="content">
+      <div class="b1">Box 1</div>
+      <div class="b1">Box 2</div>
+      <div class="b1">Box 3</div>
+      <div class="b1">Box 4</div>
+      <div class="b2">Box 1</div>
+      <div class="b2">Box 2</div>
+      <div class="b2">Box 3</div>
+      <div class="b3">Box 1</div>
+      <div class="b3">Box 2</div>
+    </div>
+    <aside>
+      Side Bar
+    </aside>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div class="fb">Box 1</div>
+      <div class="fb">Box 2</div>
+      <div class="fb">Box 3</div>
+    </div>
+  </footer>
+</body>
+</html>
+
+------------------------HTML------------------------
+
+:root{
+    --gap: 1vw;
+    --bottom-gap: 5px;
+    --height1: 25vh;
+    --height2:15vh;
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    transition: border 0.3s;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------HEADER-Desktop----------------------------------------------*/
+
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: royalblue;
+}
+
+.header-content{
+    margin: 0 10%;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h2{
+    margin:0;
+    color: white;
+}
+
+.navigation{
+    color: white;
+    background-color: cornflowerblue;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    font-size: 20px;
+    margin: 0 var(--gap);
+}
+
+.search-bar{
+    color: white;
+    background-color: cornflowerblue;
+    width: 40px;
+    height: 40px;
+}
+
+.glass{
+    position: relative;
+    margin-top: 20%;
+    margin-left: 15%;
+    border: 3px solid rgb(255, 255, 255) ;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%; 
+}
+
+    .glass::before{
+        content: "";
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        width: 1rem;
+        height: 0.2rem;
+        top: 100%;
+        left: 80%;
+        transform: rotate(40deg);
+    }
+
+nav{
+    display: flex;
+}
+
+/*--------------------------------------CONTENT-Desktop---------------------------------------------*/
+
+main{
+    margin: 30px 10%;
+    width:80%;
+    display: flex;
+    gap: var(--gap);
+
+}
+
+.content{
+    display:flex;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    flex-grow:4;
+}
+
+.b1{
+    height: var(--height1);
+    margin-bottom: var(--bottom-gap);
+    color:white;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 20%;
+    box-sizing: border-box;
+}
+.b2{
+    height: var(--height1);
+    margin-bottom: var(--bottom-gap);
+    color:white;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 30%;
+    box-sizing: border-box;
+}
+.b3{
+    height: var(--height1);
+    color:white;
+    background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 49%;
+    box-sizing: border-box;
+}
+
+aside{
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 3;
+}
+
+.b1:hover{
+    border: orangered 5px solid;
+    color: orangered;
+}
+.b2:hover{
+    border: maroon 5px solid;
+    color: maroon;
+}
+.b3:hover{
+    border: orange 5px solid;
+    color: orange;
+}
+aside:hover{
+    border: navy 5px solid;
+    color: navy;
+}
+
+/*--------------------------------------FOOTER-Desktop----------------------------------------------*/
+
+footer{
+    width: 100%;
+    background-color: purple;
+    height: 40vh;
+}
+
+.footer-content{
+    width:80%;
+    margin: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1%;
+    height: 100%;
+}
+
+.fb{
+    background-color: plum;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--height1);
+    flex-grow:1;
+}
+
+.fb:hover{
+    border: indigo 5px solid;
+    color: indigo;
+}
+
+/*----------------------------------------Tablet----------------------------------------------------*/
+
+@media screen and (max-width: 800px){
+
+main{
+    flex-direction: column;
+    gap: var(--gap);
+    margin: 30px 10%;
+    width: 80%;
+}
+
+.content{
+    gap: var(--gap);
+}
+
+.header-content{
+    margin: 0 10%;
+    width: 80%;
+}
+
+.footer-content{
+    margin: 0 10%;
+    width: 80%;
+    flex-wrap: wrap;
+    column-gap: var(--gap);
+    height: auto;
+}
+
+.b1{
+    margin-bottom: var(--bottom-gap);
+    flex: 1 1 49%;
+    height:var(--height2);
+}
+
+.b2{
+    margin-bottom: var(--bottom-gap);
+    display: none;
+    height:var(--height2);
+}
+
+.b3{
+    flex: 1 1 49%;
+    margin-bottom: var(--bottom-gap);
+    height:var(--height2);
+}
+aside{
+    height: 20vh;
+}
+
+.fb{
+    height: 8vh;
+    flex: 1 1 49%;
+    margin-bottom: var(--bottom-gap);
+}
+footer{
+    display: flex;
+    align-items: center;
+}
+
+.navigation{
+    display: none;
+}
+.glass{
+    display: none;
+}
+
+}
+
+/*-----------------------------------------Mobil----------------------------------------------------*/
+
+@media screen and (max-width: 360px){
+
+    .content{
+        flex-direction: column-reverse;
+        gap: var(--gap);
+    }
+
+    main{
+        gap: var(--gap);
+    }
+
+    .b2{
+        display: flex;
+    }
+
+    .b1, .b2, .b3{
+        flex: 0 0 100%;
+        padding: 20px;
+        order: 1;
+    }
+
+    .fb:nth-child(1), .fb:nth-child(2){
+        display: none;
+    }
+
+}
+------------------------CSS------------------------
+
+const searchBtn = document.getElementById('search-btn');
+const searchBar = document.querySelector('.searchbar');
+
+searchBar.addEventListener('click', () => {
+  if (navigationMenu.classList.contains('open')) {
+    navigationMenu.classList.remove('open');
+  } else {
+    navigationMenu.classList.add('open');
+  }
+});
+
+searchBar.addEventListener('mouseover', () => {
+  if (!navigationMenu.classList.contains('open')) {
+    navigationMenu.classList.add('hover');
+  }
+});
+
+searchBar.addEventListener('mouseout', () => {
+  navigationMenu.classList.remove('hover');
+});
+------------------------JS------------------------
